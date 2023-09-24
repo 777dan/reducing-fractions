@@ -1,0 +1,18 @@
+#fraction {
+    width: 50px;
+}
+
+#numerator,
+#denominator {
+    display: block;
+    text-align: center;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+}
+
+#int {
+    margin-right: 10px;
+}
