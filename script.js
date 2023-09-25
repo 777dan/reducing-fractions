@@ -4,12 +4,17 @@ let n = numerator;
 let d = denominator;
 let int = 0;
 if (denominator === 0) {
-    denominator = "error";
-    numerator = "error";
     int = "error";
+    document.getElementById("fraction").style.visibility = "hidden";
 }
-if (numerator === 0) denominator = 0;
-else {
+else if (numerator % denominator === 0) {
+    int = numerator / denominator;
+    document.getElementById("fraction").style.visibility = "hidden";
+}
+else if (numerator === 0) {
+    int = 0;
+    document.getElementById("fraction").style.visibility = "hidden";
+} else {
     while (n !== d) {
         if (!isNaN(n) && !isNaN(d)) {
             if (n > d) {
@@ -29,6 +34,8 @@ else {
     if (numerator > denominator) {
         int = ~~(numerator / denominator)
         numerator = numerator % denominator;
+    } else {
+        document.getElementById("int").style.visibility = "hidden";
     }
 }
 document.getElementById("numerator").innerHTML = numerator;
